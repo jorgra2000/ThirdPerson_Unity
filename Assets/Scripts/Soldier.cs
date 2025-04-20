@@ -8,6 +8,7 @@ public class Soldier : MonoBehaviour
 {
     [SerializeField] private bool isAlly;
     [SerializeField] private float lifePoints;
+    [SerializeField] private GameObject coinPrefab;
 
     const string IDLE = "Idle";
     const string RUN = "Run";
@@ -51,6 +52,31 @@ public class Soldier : MonoBehaviour
         else
         {
             animator.Play(RUN);
+        }
+    }
+
+    public void TakeDamage(float damage) 
+    {
+        lifePoints -= damage;
+        if(lifePoints <= 0) 
+        {
+            if (!isAlly) 
+            {
+                Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            }
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isAlly) 
+        {
+            if (other.CompareTag("CastleP1")) 
+            {
+                other.GetComponent<Castle>().LooseHealth(10);
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -14,10 +14,15 @@ public class Player : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private IInteractable currentInteractable = null;
+    private Transform targetToAttack;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private LayerMask clickableLayers;
     [SerializeField] private float remainingDistance;
+    [SerializeField] private Projectile projectilePrefab;
+    [SerializeField] private LayerMask layerMaskAttack;
+    [SerializeField] private Vector3 attackRangeDimensions;
+    [SerializeField] private Transform spawnPoint;
 
     private float lookRotationSpeed = 8f;
 
@@ -28,12 +33,59 @@ public class Player : MonoBehaviour
 
         input = new PlayerActions();
         AssignInputs();
+        StartCoroutine(AttackProcess());
     }
 
     private void Update()
     {
         FaceTarget();
         SetAnimation();
+        targetToAttack = DetectNearTarget();
+        if (targetToAttack != null) 
+        {
+            Debug.Log(targetToAttack.gameObject.name);
+        }
+    }
+
+    private Transform DetectNearTarget()
+    {
+        List<GameObject> detectedObjects = new List<GameObject>();
+        Vector3 center = transform.position;
+
+        Collider[] colliders = Physics.OverlapBox(center, attackRangeDimensions, Quaternion.identity, layerMaskAttack);
+
+        foreach (Collider col in colliders)
+        {
+            if (col.CompareTag("Enemy"))
+            {
+                detectedObjects.Add(col.gameObject);
+            }
+        }
+
+        if(detectedObjects.Count != 0) 
+        {
+            return detectedObjects[0].transform;
+        }
+
+        return null;
+    }
+
+    IEnumerator AttackProcess() 
+    {
+        while (true) 
+        {
+            yield return new WaitForSeconds(1f);
+            if (targetToAttack != null)
+            {
+                animator.SetTrigger("attack");
+            }
+        }
+    }
+
+    private void Attack() 
+    {
+        Projectile bullet = Instantiate(projectilePrefab, spawnPoint.position, Quaternion.identity);
+        bullet.SetTarget(targetToAttack);
     }
 
     void AssignInputs() 
@@ -74,11 +126,11 @@ public class Player : MonoBehaviour
     {
         if (agent.velocity == Vector3.zero)
         {
-            animator.Play(IDLE);
+            animator.SetBool("moving", false);
         }
         else 
         {
-            animator.Play(RUN);
+            animator.SetBool("moving", true);
         }
     }
 
@@ -114,5 +166,11 @@ public class Player : MonoBehaviour
             building.HideCost();
             currentInteractable = null;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, attackRangeDimensions * 2);
     }
 }
