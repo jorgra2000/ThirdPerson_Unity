@@ -13,6 +13,10 @@ PrefabInstance:
       value: Enemy_Castle
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 637b3bb1a53fd584b8b2f29eddb05290, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 637b3bb1a53fd584b8b2f29eddb05290, type: 3}
       propertyPath: m_TagString
       value: CastleP2
       objectReference: {fileID: 0}
