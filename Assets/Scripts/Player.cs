@@ -41,10 +41,6 @@ public class Player : MonoBehaviour
         FaceTarget();
         SetAnimation();
         targetToAttack = DetectNearTarget();
-        if (targetToAttack != null) 
-        {
-            Debug.Log(targetToAttack.gameObject.name);
-        }
     }
 
     private Transform DetectNearTarget()
