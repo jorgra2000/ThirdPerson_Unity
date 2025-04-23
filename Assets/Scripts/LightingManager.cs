@@ -8,6 +8,7 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light directionalLight;
     [SerializeField] private LightingPreset preset;
     [SerializeField, Range(0,24)] private float timeDay;
+    [SerializeField] GameManager gameManager;
 
 
     private void Update()
@@ -20,8 +21,13 @@ public class LightingManager : MonoBehaviour
         if (Application.isPlaying) 
         {
             timeDay += Time.deltaTime;
-            timeDay %= 24;
+            if (timeDay >= 24f)
+            {
+                timeDay %= 24f;
+                gameManager.ChangeDay();
+            }
             UpdateLighting(timeDay/24f);
+
         }
     }
 

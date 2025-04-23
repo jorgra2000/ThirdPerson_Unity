@@ -7,7 +7,6 @@ TagManager:
   - Coin
   - Building
   - CastleP1
-  - CastleP2
   - Enemy
   layers:
   - Default

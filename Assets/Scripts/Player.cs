@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask layerMaskAttack;
     [SerializeField] private Vector3 attackRangeDimensions;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float attackSpeed;
 
     private float lookRotationSpeed = 8f;
 
@@ -70,11 +71,11 @@ public class Player : MonoBehaviour
     {
         while (true) 
         {
-            yield return new WaitForSeconds(1f);
             if (targetToAttack != null)
             {
                 animator.SetTrigger("attack");
             }
+            yield return new WaitForSeconds(attackSpeed);
         }
     }
 

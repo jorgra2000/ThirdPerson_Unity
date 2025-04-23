@@ -332,74 +332,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &305571117
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.247634
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.247634
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6623273
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.6623273
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 139
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266275978773, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105533266276274741, guid: 5144e3c63f2a8d5448394ebbf3323d45,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy_Castle
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5144e3c63f2a8d5448394ebbf3323d45, type: 3}
 --- !u!1 &408373240
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +537,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11de18769227dad47b984a358e64a82d, type: 3}
+--- !u!1001 &1200871506
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 165872, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_Name
+      value: Player_Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.41230947
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9110439
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 228.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 405232, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3943041192751421455, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+    - {fileID: 446311727229760737, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+    - {fileID: 3288867113064939614, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+    - {fileID: 8373989967859019614, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e24a3f80cd4b244bbf0a55cecc46577, type: 3}
 --- !u!1 &1314728211
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITLE
+  m_text: WIZARD DEFENDER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -947,7 +940,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1134,4 +1127,4 @@ SceneRoots:
   - {fileID: 1333787545}
   - {fileID: 1364204555}
   - {fileID: 795136074}
-  - {fileID: 305571117}
+  - {fileID: 1200871506}

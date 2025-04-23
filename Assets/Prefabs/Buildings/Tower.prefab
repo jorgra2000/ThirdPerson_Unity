@@ -331,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ce8b6056e281f7c40b4f6f25ef610477, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce8b6056e281f7c40b4f6f25ef610477, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -475,5 +479,5 @@ MonoBehaviour:
     m_Bits: 1
   attackRangeDimensions: {x: 10, y: 5, z: 10}
   spawnPoint: {fileID: 6201582753326406118}
-  projectilePrefab: {fileID: 8364582111283072418, guid: 8d8214865900b4f4c8c5ddc703d8a32c,
+  projectilePrefab: {fileID: 6054296475552542946, guid: 4f024587de3597c48afdc3c847b8e855,
     type: 3}

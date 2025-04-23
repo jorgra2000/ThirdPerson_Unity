@@ -6,9 +6,10 @@ using UnityEngine.Windows;
 
 public class Soldier : MonoBehaviour
 {
-    [SerializeField] private bool isAlly;
     [SerializeField] private float lifePoints;
     [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private Vector3 attackRangeDimensions;
+    [SerializeField] private LayerMask layerMaskAttack;
 
     const string IDLE = "Idle";
     const string RUN = "Run";
@@ -16,30 +17,24 @@ public class Soldier : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
 
-    private Transform destination;
+    private Vector3 destination;
 
     private void Awake()
     {
-        if (isAlly) 
-        {
-            destination = GameObject.FindGameObjectWithTag("CastleP2").transform;
-        }
-        else 
-        {
-            destination = GameObject.FindGameObjectWithTag("CastleP1").transform;
-        }
-
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
-        agent.destination = destination.position;
+        destination = GameObject.FindGameObjectWithTag("CastleP1").transform.position;
+
+        agent.destination = destination;
     }
 
     private void Update()
     {
+        
         SetAnimation();
     }
 
@@ -60,23 +55,23 @@ public class Soldier : MonoBehaviour
         lifePoints -= damage;
         if(lifePoints <= 0) 
         {
-            if (!isAlly) 
-            {
-                Instantiate(coinPrefab, transform.position, Quaternion.identity);
-            }
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isAlly) 
+        if (other.CompareTag("CastleP1")) 
         {
-            if (other.CompareTag("CastleP1")) 
-            {
-                other.GetComponent<Castle>().LooseHealth(10);
-                Destroy(gameObject);
-            }
+            other.GetComponent<Castle>().LooseHealth(10);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, attackRangeDimensions * 2);
     }
 }

@@ -1202,8 +1202,8 @@ GameObject:
   - component: {fileID: 4865879263959272123}
   - component: {fileID: 1079488584531636469}
   m_Layer: 0
-  m_Name: Infantry_P2
-  m_TagString: Untagged
+  m_Name: Enemy_01
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,18 +1255,18 @@ NavMeshAgent:
   m_GameObject: {fileID: 7747048001480871012}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 5
-  m_Acceleration: 8
+  m_Acceleration: Infinity
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2658556459520264798
 MonoBehaviour:
@@ -1280,10 +1280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54608118e6bc8494cb2694c35806cb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlly: 0
-  lifePoints: 10
+  lifePoints: 5
   coinPrefab: {fileID: 2737273626548784684, guid: 8fee017a65438ed4ab095e6a2ed516db,
     type: 3}
+  attackRangeDimensions: {x: 5, y: 2, z: 5}
+  layerMaskAttack:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!54 &4865879263959272123
 Rigidbody:
   m_ObjectHideFlags: 0
